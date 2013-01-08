@@ -76,18 +76,18 @@ TaskList.prototype = {
     console.log(">> Update item to 'completed'");        
     console.log("==================================================================================="); 
     console.log(req.body);
-    console.log(completedTasks);
-    console.log(allTasks);
+    console.log('completedTasks: ' + completedTasks);
+    console.log("==================================================================================="); 
+
 
     _.each(allTasks, function(taskId, i, list){
-      console.log('taskId: ' + taskId);
-      console.log('i: ' + i);
+      var o_id = new BSON.ObjectID(taskId);
+      var isCompleted = completedTasks == taskId || _.contains(completedTasks, taskId);
       console.log('list: ' + list);
-      
-      var isCompleted = _.contains(completedTasks, taskId);
+      console.log('i: ' + i);
       console.log('isCompleted: ' + isCompleted);
       console.log('taskId: ' + taskId);
-      var o_id = new BSON.ObjectID(taskId);
+      console.log("==================================================================================="); 
 
       var conditions = { _id: o_id };
       var updates = { itemCompleted: isCompleted };
