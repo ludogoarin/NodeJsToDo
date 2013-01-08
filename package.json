@@ -9,6 +9,6 @@
     "express": "3.0.5",
     "jade": "*",
     "mongodb": "1.2.7",
-    "underscpre": "1.4.3"
+    "underscore": "1.4.3"
   }
 }
